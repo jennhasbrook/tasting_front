@@ -1,0 +1,10 @@
+<h3>User show Page</h3>
+<p>Should contain user show, user destroy</p>
+<p>Should also contain appointment index and appointment show</p>
+
+<h2>User Profile</h2>
+<h3>Name: <%=@user["name"]%> </h3>
+<h3>Email: <%=@user["email"]%> </h3>
+<h3>Phone number: <%=@user["phone_number"]%> </h3>
+<a href="/client/users/<%= @user['id'] %>/edit">Update My Profile</a>
+</br>

@@ -1,0 +1,24 @@
+<h2>Winery Index</h2>
+
+<div>
+  <%= form_tag "/client/wineries", method: :get do %>
+    <input type="text" name="search">
+    <input type="submit" value="Name Search">
+  <% end %>
+  
+</div>
+
+
+<% @wineries.each do |winery| %>
+	<h3>Name: <%= winery["name"]%> </h3>
+	<h3>Region: <%= winery["region"]%> </h3>
+	<p>City: <%=winery["city"]%></p>
+	<p>Address: <%=winery["address"]%> 
+	</p>
+	<br>
+	<br>
+
+
+<% end %>
+
+</div>

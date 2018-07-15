@@ -1,0 +1,22 @@
+<h3> Update my profile </h3>
+
+
+
+<%= form_tag "/client/users/#{@user["id"]}", method: :patch do %>
+  <div>
+    Name: <input type="text" name="name" value="<%= @user["name"] %>" />
+  </div>
+  <div>
+    Email: <input type="text" name="email" value="<%= @user["email"] %>" />
+  </div>
+  <div>
+    Phone number: <input type="text" name="phone_number" value="<%= @user["phone_number"] %>" />
+  </div>
+
+  <input type="submit" name="" value="Update my profile"/>
+  </br>
+<br>
+<br>
+
+<a href="/client/users/ <%= @user['id'] %>" data-method="delete">Delete user</a>
+<% end %>
