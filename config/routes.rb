@@ -4,8 +4,10 @@ Rails.application.routes.draw do
  namespace :client do
     get '/wineries' => 'wineries#index'
     get '/wineries/:id' => 'wineries#show'	
-    get 'users/:id/edit' => 'users#edit'
+    get 'wineries/:id/edit' => 'wineries#edit'
+    patch 'wineries/:id' => 'wineries#update'
 
+    get 'users/:id/edit' => 'users#edit'
     get '/users/:id' => 'users#show'
     patch '/users/:id' => 'users#update'
     delete '/users/:id' => 'users#destroy'

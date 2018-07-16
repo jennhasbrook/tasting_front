@@ -1,0 +1,38 @@
+
+
+<%= form_tag "/client/wineries/#{@winery["id"]}", method: :patch do %>
+  <div>
+    Name: <input type="text" name="name" value="<%= @winery["name"] %>" />
+  </div>
+  <div>
+   Region: <input type="text" name="price" value="<%= @winery["region"] %>" />
+  </div>
+  <div>
+   City: <input type="number" name="supplier_id" value="<%= @winery["city"] %>" />
+  </div>
+  <div> Address: <input type="text" name="name" value="<%= @winery["address"] %>" />
+  </div>
+  <div>
+    Phone: <input type="text" name="price" value="<%= @winery["phone_number"] %>" />
+  </div>
+  <div>
+    Tasting Fee: <input type="text" name="description" value="<%= @winery["tasting_fee"] %>" />
+  </div>
+  <div>
+    Varietal: <input type="number" name="supplier_id" value="<%= @winery["varietal"] %>" />
+  </div>
+    <div> Link: <input type="text" name="name" value="<%= @winery["link"] %>" />
+  </div>
+    <div>
+    Description: <input type="text" name="description" value="<%= @winery["description"] %>" />
+  </div>
+  <div>
+    Hours: <input type="text" name="price" value="<%= @winery["hours"] %>" />
+  </div>
+  <div>
+   Appointment Needed: <input type="text" name="description" value="<%= @winery["appt_needed"] %>" />
+  </div>
+
+
+  <input type="submit" name="" value="Update Winery"/>
+<% end %>
