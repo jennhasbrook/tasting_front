@@ -1,0 +1,45 @@
+<% if @errors %>
+  <ul>
+    <% @errors.each do |error| %>
+      <li> <%= error %> </li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+<%= form_tag "/client/wineries", method: :post do %>
+ 
+   <div>
+      Name: <input type="text" name="name" value="<%=@winery['name']%>" />
+    </div>
+    <div>
+     Region: <input type="text" name="region" value="<%= @winery["region"] %>" />
+    </div>
+    <div>
+     City: <input type="text" name="city" value="<%=@winery["city"] %>" />
+    </div>
+    <div> Address: <input type="text" name="address" value="<%= @winery["address"] %>" />
+    </div>
+    <div>
+      Phone: <input type="text" name="phone_number" value="<%= @winery["phone_number"] %>" />
+    </div>
+    <div>
+      Tasting Fee: <input type="numbers" name="tasting_fee" value="<%= @winery["tasting_fee"] %>" />
+    </div>
+    <div>
+      Varietal: <input type="text" name="varietal" value="<%= @winery["varietal"] %>" />
+    </div>
+      <div> Link: <input type="text" name="link" value="<%= @winery["link"] %>" />
+    </div>
+      <div>
+      Description: <input type="text" name="description" value="<%= @winery["description"] %>" />
+    </div>
+    <div>
+      Hours: <input type="text" name="hours" value="<%= @winery["hours"] %>" />
+    </div>
+    <div>
+     Appointment Needed: <input type="text" name="appt_needed" value="<%= @winery["appt_needed"] %>" />
+    </div>
+
+  <input type="submit" name="" value="Create Winery" />
+<% end %>

@@ -1,0 +1,16 @@
+
+<%= form_tag "/client/appointments", method: :post do %>
+ 
+   <div>
+      User_Id: <input type="number" name="user_id" value="<%=@appointment['user_id']%>" />
+    </div>
+    <div>
+     Winery_Id: <input type="number" name="winery_id" value="<%= @appointment["winery_id"] %>" />
+    </div>
+    <div>
+     Appt Date and Time:: <input type="text" name="appt_date" value="<%=@appointment["appt_date"] %>" />
+    </div>
+    
+
+  <input type="submit" name="" value="Create Appointment" />
+<% end %>

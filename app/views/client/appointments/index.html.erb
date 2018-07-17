@@ -1,0 +1,17 @@
+<h2>Appointment Index</h2>
+
+
+
+<% @appointments.each do |appointment| %>
+	<h3>Appointment Id: <%= appointment["id"]%> </h3>
+	<h3>User ID: <%= appointment["user_id"]%> </h3>
+	<p>Winery ID: <%=appointment["winery_id"]%></p>
+	<p>Appointment Date and Time: <%=appointment["appt_date"]%> 
+	</p>
+	<br>
+	<br>
+
+
+<% end %>
+
+</div>

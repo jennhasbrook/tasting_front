@@ -1,0 +1,22 @@
+
+
+<%= form_tag "/client/appointments/#{@appointment['id']}", method: :patch do %>
+  <div>
+    ID: <input type="number" name="id" value="<%= @appointment['id'] %>" />
+  </div>
+  <div>
+   User ID: <input type="number" name="user_id" value="<%= @appointment['user_id'] %>" />
+  </div>
+  <div>
+   Winery ID: <input type="number" name="winery_id" value="<%= @appointment['winery_id'] %>" />
+  </div>
+  <div> Appointment Date and Time: <input type="text" name="appt_date" value="<%= @appointment['appt_date'] %>" />
+  </div>
+  
+  <input type="submit" name="" value='Update Appointment'/>
+<br>
+<br>
+
+  <a href="/client/appointments/ <%= @appointment['id'] %>" data-method="delete">Delete appointment</a>
+
+<% end %>

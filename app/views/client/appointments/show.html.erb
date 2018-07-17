@@ -1,0 +1,8 @@
+	<h3>Appointment ID: <%= @appointment["id"]%> </h3>
+	<h3>User ID: <%= @appointment["user_id"]%> </h3>
+	<p>Winery ID: <%=@appointment["winery_id"]%> </p>
+	<p>Appointment Date and Time: <%=@appointment["appt_date"]%> </p>
+	
+
+
+	<a href="/client/appointments/<%=@appointment['id']%>/edit">Edit</a>
