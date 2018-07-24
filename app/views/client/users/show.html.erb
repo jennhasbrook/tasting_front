@@ -8,3 +8,19 @@
 <h3>Phone number: <%=@user["phone_number"]%> </h3>
 <a href="/client/users/<%= @user['id'] %>/edit">Update My Profile</a>
 </br>
+
+<br>
+<br>
+<h2>Appointments for this user:</h2>
+<%= @user['appointments'].each do |appointment| %>
+<h3>Appointment Id: <%= appointment["id"]%> </h3>
+<h3>User ID: <%= appointment["user_id"]%> </h3>
+<p>Winery ID: <%= appointment["winery_id"]%> </p>
+<p>Appointment Date and Time: <%=appointment["appt_date"]%> </p>
+
+	<a href="/client/appointments/<%=@appointment['id']%>/edit">Edit</a>
+
+<% end%>
+
+
+

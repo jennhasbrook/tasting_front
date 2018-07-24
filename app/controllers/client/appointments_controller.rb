@@ -13,6 +13,31 @@ class Client::AppointmentsController < ApplicationController
 	end
 
 
+  def edit
+  	@appointment = Unirest.get("http://localhost:3000/api/appointments/#{params['id']}").body
+  	render 'edit.html.erb'
+  end
+
+	def update
+		@appointment = {
+			'id' => params[:id],
+			'winery_id' => params[:winery_id],
+			'user_id' => params[:user_id],
+			'appt_date' => params[:appt_date]
+		}
+
+		response = Unirest.patch("http://localhost:3000/api/appointments/#{params['id']}", parameters: @appointment)
+
+		if response.code == 200
+			flash[:success]="Appointment updated"
+			redirect_to '/client/appointments'
+		else
+			@errors = response.body['errors']
+			render 'edit.html.erb'
+		end
+
+	end
+
 	def show
 		@appointment = Unirest.get("http://localhost:3000/api/appointments/#{params[:id]}").body
 
@@ -51,32 +76,6 @@ class Client::AppointmentsController < ApplicationController
 		end
 
 	end	
-
-
-  def edit
-  	@appointment = Unirest.get("http://localhost:3000/api/appointments/#{params[:id]}").body
-  	render 'edit.html.erb'
-  end
-
-	def update
-		@appointment = {
-			'id' => params[:id],
-			'winery_id' => params[:winery_id],
-			'user_id' => params[:user_id],
-			'appt_date' => params[:appt_date]
-		}
-
-		response = Unirest.patch("http://localhost:3000/api/appointments/#{params['id']}", parameters: @appointment)
-
-		if response.code == 200
-			flash[:success]="Appointment updated"
-			redirect_to '/client/appointments'
-		else
-			@errors = response.body['errors']
-			render 'edit.html.erb'
-		end
-
-	end
 
 
 	def destroy

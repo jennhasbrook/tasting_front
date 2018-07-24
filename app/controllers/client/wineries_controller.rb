@@ -14,8 +14,8 @@ class Client::WineriesController < ApplicationController
 
   def edit
     @winery = Unirest.get("http://localhost:3000/api/wineries/#{params[:id]}").body
-    
     render 'edit.html.erb'
+    
   end
 
 
@@ -37,7 +37,7 @@ class Client::WineriesController < ApplicationController
 
     response = Unirest.patch("http://localhost:3000/api/wineries/#{params['id']}", parameters: @winery)
 
-    if response.code == 200
+    if response.code ==200
       flash[:success]="Winery updated."
       redirect_to "/client/wineries/#{winery['id']}"
     else

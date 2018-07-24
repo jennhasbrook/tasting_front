@@ -14,11 +14,11 @@ class Client::UsersController < ApplicationController
 	  	'email' => params[:email],
 	  	'phone_number' => params[:phone_number]
 	  }
-	 response = Unirest.patch("http://localhost:3000/api/users/#{params['id']}", parameters: @user)
+	  response = Unirest.patch("http://localhost:3000/api/users/#{params['id']}", parameters: @user)
 	
-	 if response.code ==200
-	 	 flash[:success] = "You successfully updated your profile."
-	 		redirect_to "/client/users/#{params['id']}"
+	  if response.code ==200
+	 	  flash[:success] = "You successfully updated your profile."
+	 		 redirect_to "/client/users/#{params['id']}"
 	 	else
 	 		@errors = response.body['errors']
 	 		render 'edit.html.erb'
